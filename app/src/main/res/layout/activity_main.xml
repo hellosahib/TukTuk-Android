@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#4949AB"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Book Taxi"
+        android:textSize="30sp"
+        android:textColor="@android:color/white"
+        android:paddingStart="30dp"
+        android:paddingEnd="0dp"
+        android:textStyle="bold"
+        android:id="@+id/tv_book_taxi_main"/>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tip_from_destination_main"
+        android:layout_below="@id/tv_book_taxi_main"
+        android:layout_marginTop="16dp"
+        android:hint="From"
+        android:padding="16dp">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColorHint="@android:color/white"
+            android:textColor="@android:color/white"
+            android:drawableStart="@drawable/ic_place_black_24dp"
+            android:drawablePadding="4dp"
+            />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tip_to_destination_main"
+        android:layout_below="@id/tip_from_destination_main"
+        android:layout_marginTop="16dp"
+        android:hint="Where To ?"
+        android:padding="16dp">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColorHint="@android:color/white"
+            android:textColor="@android:color/white"
+            android:drawableStart="@drawable/ic_flag_orange_24dp"
+            android:drawablePadding="4dp"
+            />
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:layout_width="102dp"
+        android:layout_height="48dp"
+        android:text="Home"
+        android:textColor="@android:color/white"
+        android:background="#4F4FAD"
+        android:layout_below="@id/tip_to_destination_main"
+        android:id="@+id/btn_home_main"
+        android:layout_marginStart="16dp"
+        android:elevation="16dp"/>
+
+    <Button
+        android:layout_width="102dp"
+        android:layout_height="48dp"
+        android:text="Work"
+        android:textColor="@android:color/white"
+        android:background="#4F4FAD"
+        android:layout_toEndOf="@id/btn_home_main"
+        android:layout_below="@id/tip_to_destination_main"
+        android:id="@+id/btn_work_main"
+        android:layout_marginStart="16dp"
+        android:elevation="16dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Time"
+        android:textColor="@android:color/white"
+        android:id="@+id/tv_time_main"
+        android:layout_below="@id/btn_home_main"
+        android:layout_marginTop="16dp"
+        android:padding="8dp"
+        android:drawableLeft="@drawable/ic_time_orange_24dp"
+        android:drawablePadding="4dp"
+        />
+    <Spinner
+        android:layout_width="102dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_time_main"
+        android:layout_marginStart="16dp"
+        android:id="@+id/spinner_time_main"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:text="Book Now"
+        android:background="@android:color/holo_orange_dark"
+        android:layout_alignBottom="@id/spinner_time_main"
+        android:layout_alignParentBottom="true"
+        android:elevation="16dp"/>
+</RelativeLayout>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/til_name_register"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:gravity="center_horizontal"
+                android:hint="Name"
+                android:textColorHint="@color/colorAccent">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/username"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@mipmap/ic_launcher_round"
+                    android:drawablePadding="8dp"
+                    android:inputType="textPersonName"
+                    android:singleLine="true"
+                    android:textColor="@android:color/white"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/til_email_register"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/til_name_register"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:gravity="center_horizontal"
+                android:hint="Email Address"
+                android:textColorHint="@color/colorAccent">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/email"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@mipmap/ic_launcher_round"
+                    android:drawablePadding="8dp"
+                    android:inputType="textEmailAddress"
+                    android:singleLine="true"
+                    android:textColor="@android:color/white"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/til_pass_register"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/til_email_register"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:gravity="center_horizontal"
+                android:hint="Password"
+                android:textColorHint="@color/colorAccent">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/pass"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@mipmap/ic_launcher_round"
+                    android:drawablePadding="8dp"
+                    android:inputType="textPassword"
+                    android:singleLine="true"
+                    android:textColor="@android:color/white"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/til_confirmpass_register"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/til_pass_register"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:gravity="center_horizontal"
+                android:hint="Confirm Password"
+                android:textColorHint="@color/colorAccent">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/confirm_pass"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@mipmap/ic_launcher_round"
+                    android:drawablePadding="8dp"
+                    android:inputType="textPassword"
+                    android:singleLine="true"
+                    android:textColor="@android:color/white"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_layout_terms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/til_confirmpass_register"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp">
+
+                <CheckBox
+                    android:id="@+id/termsCheckbox_register"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Accept Terms and Conditions"
+                    android:textColor="@android:color/white"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_signup_register"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linear_layout_terms"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="40dp"
+                android:background="@drawable/rounded_button"
+                android:text="Register"
+                android:textColor="@android:color/white" />
+        </RelativeLayout>
+    </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/progressbar_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="invisible" />
+</RelativeLayout>
