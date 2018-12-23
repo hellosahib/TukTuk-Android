@@ -39,15 +39,17 @@ public class AuthActivity extends AppCompatActivity {
                 mPager.setCurrentItem(1,true);
             }
         });
-    }
 
-    @Override
-    public void onBackPressed() {
-        if (mPager.getCurrentItem() == 0) {
-            super.onBackPressed();
-        } else {
-            mPager.setCurrentItem(mPager.getCurrentItem() - 1, true);
-        }
+        mPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            public void onPageScrolled(int i, float v, int i1) {}
+            public void onPageScrollStateChanged(int i) {}
+            @Override
+            public void onPageSelected(int i) {
+                if(i==0) swapSelected(mLogin,mRegister);
+                if(i==1) swapSelected(mRegister,mLogin);
+            }
+        });
+
     }
 
     public void swapSelected(TextView t1,TextView t2){
