@@ -22,11 +22,6 @@ public class AuthPagerAdapter extends FragmentPagerAdapter {
     }
 
     @Override
-    public long getItemId(int position) {
-        return super.getItemId(position);
-    }
-
-    @Override
     public int getCount() {
         return TOTAL_FRAGMENTS;
     }

@@ -17,22 +17,23 @@ import android.widget.Toast;
 
 public class RegisterFragment extends Fragment {
 
-    private TextInputLayout mName,mEmail,mPassword,mConfirmPassword;
-    private ProgressBar mProgressbar;
+    private TextInputLayout mName, mEmail, mPassword, mConfirmPassword;
+    //private ProgressBar mProgressbar;
     private CheckBox mCheckTerms;
     private Button mRegister;
 
-    public RegisterFragment(){}
+    public RegisterFragment() {
+    }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.frame_register,container,false);
+        View root = inflater.inflate(R.layout.frame_register, container, false);
         mName = root.findViewById(R.id.til_name_register);
         mEmail = root.findViewById(R.id.til_email_register);
         mPassword = root.findViewById(R.id.til_pass_register);
         mConfirmPassword = root.findViewById(R.id.til_confirmpass_register);
-        mProgressbar = root.findViewById(R.id.progressbar_register);
+        //mProgressbar = root.findViewById(R.id.progressbar_register);
         mRegister = root.findViewById(R.id.btn_signup_register);
         mCheckTerms = root.findViewById(R.id.termsCheckbox_register);
 
@@ -45,9 +46,9 @@ public class RegisterFragment extends Fragment {
                     Toast.makeText(getContext(), "Password don't match", Toast.LENGTH_SHORT).show();
                 } else if (!mCheckTerms.isChecked()) {
                     Toast.makeText(getContext(), "Please accept terms and conditions", Toast.LENGTH_SHORT).show();
-                } else{
+                } else {
                     //insertData(mName.getEditText().getText().toString(), mEmail.getEditText().getText().toString(), mPass.getEditText().getText().toString());
-                    startActivity(new Intent(getContext(),MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK));
+                    startActivity(new Intent(getContext(), MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK));
 
                 }
             }

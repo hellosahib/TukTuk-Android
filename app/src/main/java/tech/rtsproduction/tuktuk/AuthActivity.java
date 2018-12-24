@@ -52,7 +52,7 @@ public class AuthActivity extends AppCompatActivity {
 
     }
 
-    public void swapSelected(TextView t1,TextView t2){
+    private void swapSelected(TextView t1,TextView t2){
         t1.setTextColor(getResources().getColor(R.color.colorAccent));
         t2.setTextColor(getResources().getColor(R.color.white));
     }
