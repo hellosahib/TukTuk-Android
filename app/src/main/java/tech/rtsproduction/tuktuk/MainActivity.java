@@ -1,5 +1,6 @@
 package tech.rtsproduction.tuktuk;
 
+import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -8,7 +9,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.places.AutocompleteFilter;
@@ -67,11 +67,14 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
             public void onClick(View v) {
                 if (fromLoc != null) {
                     mConfirmBtn.setText("Looks Good!");
-                    mConfirmBtn.setClickable(false);
+                    mConfirmBtn.setEnabled(false);
                     swapVisibility(mToPlaces, mFromPlaces);
                 }
                 if (toLoc != null) {
-                    Toast.makeText(MainActivity.this, "Both Selection Done", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(MainActivity.this, ConfirmationActivity.class).putExtra("points", new double[]{
+                            fromLoc.getLatLng().latitude, fromLoc.getLatLng().longitude,
+                            toLoc.getLatLng().latitude, toLoc.getLatLng().longitude
+                    }));
                 }
             }
         });
@@ -92,7 +95,7 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
             public void onPlaceSelected(Place place) {
                 fromLoc = place;
                 updateMap(place);
-                mConfirmBtn.setClickable(true);
+                mConfirmBtn.setEnabled(true);
             }
 
             @Override
@@ -106,9 +109,11 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
             public void onPlaceSelected(Place place) {
                 toLoc = place;
                 updateMap(place);
-                mConfirmBtn.setClickable(true);
+                mConfirmBtn.setEnabled(true);
             }
-            public void onError(Status status) {}
+
+            public void onError(Status status) {
+            }
         });
     }
 
