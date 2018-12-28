@@ -49,15 +49,30 @@
             android:text="Select Date"
             android:textAlignment="center" />
 
-        <TextView
-            android:id="@+id/tv_time_confirmation"
+        <Spinner
+            android:id="@+id/spinner_time_confirmation"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginStart="2dp"
             android:layout_marginEnd="8dp"
             android:layout_weight="1"
             android:background="@android:color/darker_gray"
-            android:text="Select Time"
             android:textAlignment="center" />
     </LinearLayout>
+
+    <View
+        android:id="@+id/view_offset_confirmation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/darker_gray"
+        android:visibility="invisible" />
+
+    <ru.github.igla.ferriswheel.FerrisWheelView
+        android:id="@+id/anim_ferris_confirmation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:visibility="invisible"
+        app:fwv_cabinsNumber="7" />
+
 </RelativeLayout>

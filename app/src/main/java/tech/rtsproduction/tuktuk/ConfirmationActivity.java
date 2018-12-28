@@ -5,8 +5,10 @@ import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -16,29 +18,41 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Locale;
+
+import ru.github.igla.ferriswheel.FerrisWheelView;
 
 public class ConfirmationActivity extends FragmentActivity implements OnMapReadyCallback, DatePickerDialog.OnDateSetListener {
 
     private LatLng startPos, endPos, mapPos;
     private GoogleMap mMap;
     private Button mBookNow, mClose;
-    private TextView mDate, mTime;
+    private TextView mDate;
+    private Spinner mTime;
+    private FerrisWheelView animFerris;
+
     private final String TAG = getClass().getName();
+
+    private final int DIFF_TIME = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirmation);
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.frame_map_confirmation);
-        mapFragment.getMapAsync(this);
         mBookNow = findViewById(R.id.btn_book_now_confirmation);
         mClose = findViewById(R.id.btn_close_confirmation);
         mDate = findViewById(R.id.tv_date_confirmation);
-        mTime = findViewById(R.id.tv_time_confirmation);
-
+        mTime = findViewById(R.id.spinner_time_confirmation);
+        animFerris = findViewById(R.id.anim_ferris_confirmation);
+        mTime.setAdapter(null);
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.frame_map_confirmation);
+        mapFragment.getMapAsync(this);
+        populateSpinnerDate();
         double[] points;
         try {
             points = getIntent().getDoubleArrayExtra("points");
@@ -83,10 +97,46 @@ public class ConfirmationActivity extends FragmentActivity implements OnMapReady
         mMap = googleMap;
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(mapPos, 14));
         setMapPoints();
+        /*
+        View v = findViewById(R.id.view_offset_confirmation);
+        animFerris.setVisibility(View.VISIBLE);
+        v.setVisibility(View.VISIBLE);
+        animFerris.startAnimation();
+        */
     }
 
     public void setMapPoints() {
         mMap.addMarker(new MarkerOptions().position(startPos));
         mMap.addMarker(new MarkerOptions().position(endPos));
+    }
+
+    public void populateSpinnerDate() {
+        String[] values = getResources().getStringArray(R.array.booking_times);
+        ArrayList<String> loadedValues = new ArrayList<>();
+        //Getting Current Time of Device
+        Calendar cc = Calendar.getInstance();
+        cc.add(Calendar.HOUR, DIFF_TIME);
+        Date t = cc.getTime();
+        //Iterating Every Value To See If Time Diff is estimated Time or Not
+        for (String s : values) {
+            if (checkTiming(t, s)) loadedValues.add(s);
+        }
+        //Declaration and Initialization Of Spinner Adapter
+        ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, loadedValues);
+        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        mTime.setAdapter(spinnerAdapter);
+    }
+
+    private boolean checkTiming(Date date, String endtime) {
+        String pattern = "HH:mm";
+        SimpleDateFormat sdf = new SimpleDateFormat(pattern, Locale.ENGLISH);
+        try {
+            Date date1 = sdf.parse(sdf.format(date));
+            Date date2 = sdf.parse(endtime);
+            return (date1.before(date2));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 }
