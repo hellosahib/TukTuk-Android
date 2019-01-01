@@ -115,5 +115,6 @@
         android:layout_gravity="start"
         android:animateLayoutChanges="true"
         app:headerLayout="@layout/nav_header_main"
-        app:menu="@menu/navigationview_main" />
+        app:menu="@menu/navigationview_main"
+        android:id="@+id/nav_view_main"/>
 </android.support.v4.widget.DrawerLayout>

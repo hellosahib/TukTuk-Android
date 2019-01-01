@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="36dp"
+    android:elevation="36dp"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/img_circle_pickup_history_item"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="@android:color/holo_green_dark"
+        android:contentDescription="Pickup Location" />
+
+    <TextView
+        android:id="@+id/tv_pickup_history_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_toEndOf="@id/img_circle_pickup_history_item"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        tools:text="Elante Mall" />
+
+    <ImageView
+        android:id="@+id/img_circle_destination_history_item"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_below="@id/img_circle_pickup_history_item"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="@android:color/holo_orange_dark"
+        android:contentDescription="Destination" />
+
+    <TextView
+        android:id="@+id/tv_destination_history_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/img_circle_destination_history_item"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_toEndOf="@id/img_circle_destination_history_item"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        tools:text="ISBT" />
+
+    <TextView
+        android:id="@+id/tv_time_history_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/img_circle_destination_history_item"
+        android:drawableStart="@drawable/ic_time_orange_24dp"
+        android:drawablePadding="8dp"
+        tools:text="8:00 AM" />
+
+    <TextView
+        android:id="@+id/tv_date_history_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/tv_time_history_item"
+        android:layout_alignParentEnd="true"
+        android:drawableStart="@drawable/common_google_signin_btn_icon_dark"
+        android:drawablePadding="8dp"
+        tools:text="18 Jan 2018" />
+</RelativeLayout>
