@@ -29,7 +29,8 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/rounded_button"
-        android:text="Book Now" />
+        android:text="Book Now"
+        android:enabled="false"/>
 
     <LinearLayout
         android:layout_width="match_parent"

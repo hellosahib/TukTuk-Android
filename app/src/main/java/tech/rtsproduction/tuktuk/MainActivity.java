@@ -1,6 +1,7 @@
 package tech.rtsproduction.tuktuk;
 
 import android.content.Intent;
+import android.graphics.PorterDuff;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -25,10 +26,9 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
 
     private static final String TAG = MainActivity.class.getSimpleName();
 
-    private Button mNavigationMenu;
+    private Button mNavigationMenu , mConfirmBtn ;
     private DrawerLayout mDrawerLayout;
     private GoogleMap mMap;
-    private Button mConfirmBtn;
     private PlaceAutocompleteFragment locationFromFragment, locationToFragment;
     private Place fromLoc, toLoc;
     private LinearLayout mFromPlaces, mToPlaces;
@@ -42,7 +42,9 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
 
         mNavigationMenu = findViewById(R.id.btn_navigation_menu_main);
         mDrawerLayout = findViewById(R.id.drawer_layout_main);
+        //Changing Color Of Confirm Button
         mConfirmBtn = findViewById(R.id.btn_confirm_main);
+        mConfirmBtn.getBackground().setColorFilter(getResources().getColor(android.R.color.holo_green_dark),PorterDuff.Mode.SRC_ATOP);
         mFromPlaces = findViewById(R.id.ll_places_from_main);
         mToPlaces = findViewById(R.id.ll_places_to_main);
 
@@ -66,6 +68,7 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
             @Override
             public void onClick(View v) {
                 if (fromLoc != null) {
+                    mConfirmBtn.getBackground().setColorFilter(getResources().getColor(android.R.color.holo_orange_dark),PorterDuff.Mode.SRC_ATOP);
                     mConfirmBtn.setText("Looks Good!");
                     mConfirmBtn.setEnabled(false);
                     swapVisibility(mToPlaces, mFromPlaces);

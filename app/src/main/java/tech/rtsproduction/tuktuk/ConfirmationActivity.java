@@ -1,6 +1,7 @@
 package tech.rtsproduction.tuktuk;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -50,8 +51,10 @@ public class ConfirmationActivity extends FragmentActivity implements OnMapReady
         mTime = findViewById(R.id.spinner_time_confirmation);
         animFerris = findViewById(R.id.anim_ferris_confirmation);
         mTime.setAdapter(null);
+
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.frame_map_confirmation);
         mapFragment.getMapAsync(this);
+
         populateSpinnerDate();
         double[] points;
         try {
@@ -81,6 +84,17 @@ public class ConfirmationActivity extends FragmentActivity implements OnMapReady
                 datePicker.show();
             }
         });
+
+        mBookNow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ConfirmationActivity.this, HistoryActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+            }
+        });
+    }
+
+    //TODO: Enable Confirm Button After Selection of Both Date and Time
+    public void enableConfirm() {
     }
 
     @Override
@@ -110,6 +124,8 @@ public class ConfirmationActivity extends FragmentActivity implements OnMapReady
         mMap.addMarker(new MarkerOptions().position(endPos));
     }
 
+
+    //TODO: Change 24Hours Timeline to 12Hours Timeline
     public void populateSpinnerDate() {
         String[] values = getResources().getStringArray(R.array.booking_times);
         ArrayList<String> loadedValues = new ArrayList<>();
@@ -127,6 +143,7 @@ public class ConfirmationActivity extends FragmentActivity implements OnMapReady
         mTime.setAdapter(spinnerAdapter);
     }
 
+    //Method To Check If Specified Time @Param(endtime) is @Value(DIFF_TIME) ahead or not
     private boolean checkTiming(Date date, String endtime) {
         String pattern = "HH:mm";
         SimpleDateFormat sdf = new SimpleDateFormat(pattern, Locale.ENGLISH);
