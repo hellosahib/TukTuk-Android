@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -40,7 +41,7 @@ public class ConfirmationActivity extends FragmentActivity implements OnMapReady
 
     private final String TAG = getClass().getName();
 
-    private final int DIFF_TIME = 3;
+    private final int DIFF_TIME = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,10 +60,16 @@ public class ConfirmationActivity extends FragmentActivity implements OnMapReady
         populateSpinnerDate();
         double[] points;
         try {
+            /*
             points = getIntent().getDoubleArrayExtra("points");
             startPos = new LatLng(points[0], points[1]);
             endPos = new LatLng(points[2], points[3]);
             mapPos = new LatLng((points[0] + points[2]) / 2, (points[1] + points[3]) / 2);
+            */
+            //SAMPLE DATA
+            startPos = new LatLng(30.705751, 76.801278);
+            endPos = new LatLng(30.702689, 76.791115);
+            mapPos = new LatLng(30.70,76.78);
         } catch (Exception e) {
             Log.e(TAG, e.getMessage());
         }
@@ -89,13 +96,26 @@ public class ConfirmationActivity extends FragmentActivity implements OnMapReady
         mBookNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ConfirmationActivity.this, HistoryActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+                if(enableConfirm()){
+                    Intent gotoHistory = new Intent(ConfirmationActivity.this, HistoryActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    sendBroadcast(gotoHistory);
+                    startActivity(gotoHistory);
+                }else {Toast.makeText(ConfirmationActivity.this, "Please Fill All Details", Toast.LENGTH_SHORT).show();}
             }
         });
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        populateSpinnerDate();
+    }
+
     //TODO: Enable Confirm Button After Selection of Both Date and Time
-    public void enableConfirm() {
+    public boolean enableConfirm() {
+        //return(mDate.getText().toString().equalsIgnoreCase("SelectDate"));
+        Log.e(TAG,mTime.getSelectedItem().toString());
+        return true;
     }
 
     @Override

@@ -30,7 +30,7 @@
         android:layout_marginBottom="16dp"
         android:background="@drawable/rounded_button"
         android:text="Book Now"
-        android:enabled="false"/>
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -57,12 +57,14 @@
             android:layout_marginStart="2dp"
             android:layout_marginEnd="8dp"
             android:layout_weight="1"
+            android:spinnerMode="dialog"
             android:background="@android:color/darker_gray"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            />
     </LinearLayout>
 
     <View
-        android:id="@+id/view_offset_confirmation"
+        android:id ="@+id/view_offset_confirmation"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@android:color/darker_gray"

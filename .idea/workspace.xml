@@ -2,7 +2,10 @@
 <project version="4">
   <component name="AndroidLayouts">
     <shared>
-      <config />
+      <config>
+        <pickBest>false</pickBest>
+        <target>android-28</target>
+      </config>
     </shared>
   </component>
   <component name="AndroidLogFilters">
@@ -20,24 +23,22 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/jarAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskJars.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskJars.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_media_compat_26_1_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_v4_26_1_0.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/tech/rtsproduction/tuktuk/AuthActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/tech/rtsproduction/tuktuk/View/AuthActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/tech/rtsproduction/tuktuk/AuthPagerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/tech/rtsproduction/tuktuk/Controller/AuthPagerAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/tech/rtsproduction/tuktuk/ConfirmationActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/tech/rtsproduction/tuktuk/View/ConfirmationActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/tech/rtsproduction/tuktuk/HistoryActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/tech/rtsproduction/tuktuk/View/HistoryActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/tech/rtsproduction/tuktuk/LoginFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/tech/rtsproduction/tuktuk/View/LoginFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/tech/rtsproduction/tuktuk/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/tech/rtsproduction/tuktuk/View/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/tech/rtsproduction/tuktuk/RegisterFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/tech/rtsproduction/tuktuk/View/RegisterFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_history.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_history.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/tech/rtsproduction/tuktuk/View/ConfirmationActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/tech/rtsproduction/tuktuk/View/ConfirmationActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/tech/rtsproduction/tuktuk/View/HistoryActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/tech/rtsproduction/tuktuk/View/HistoryActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_confirmation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_confirmation.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -59,15 +60,15 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="layoutResourceFile_vertical" />
+        <option value="layoutResourceFile" />
         <option value="resourceFile" />
         <option value="Class" />
-        <option value="layoutResourceFile" />
       </list>
     </option>
   </component>
@@ -2368,13 +2369,10 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/tech/rtsproduction/tuktuk/MainActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_confirmation.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/tech/rtsproduction/tuktuk/ConfirmationActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/tech/rtsproduction/tuktuk/HistoryActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/tech/rtsproduction/tuktuk/HistoryData.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/tech/rtsproduction/tuktuk/BookingData.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/tech/rtsproduction/tuktuk/View/ConfirmationActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/tech/rtsproduction/tuktuk/View/LoginFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/custom_circle_vector.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/tech/rtsproduction/tuktuk/Controller/BookingDataAdapter.java" />
@@ -2383,9 +2381,15 @@
         <option value="$PROJECT_DIR$/app/src/main/java/tech/rtsproduction/tuktuk/View/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_history.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/tech/rtsproduction/tuktuk/Controller/BookingsListAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/tech/rtsproduction/tuktuk/View/HistoryActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/frag_history_data.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/tech/rtsproduction/tuktuk/Model/BookingData.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/tech/rtsproduction/tuktuk/View/HistoryActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_confirmation.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/tech/rtsproduction/tuktuk/View/ConfirmationActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/AppCompatProfileActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/xml/pref_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ProfileActivity.java" />
       </list>
     </option>
   </component>
@@ -2401,6 +2405,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -2422,40 +2428,7 @@
             <path>
               <item name="TukTuk-Android" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="tuktuk" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TukTuk-Android" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="tuktuk" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TukTuk-Android" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="tuktuk" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="View" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TukTuk-Android" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
-            </path>
-            <path>
-              <item name="TukTuk-Android" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
-            </path>
-            <path>
-              <item name="TukTuk-Android" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="menu" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
             <path>
               <item name="TukTuk-Android" type="1abcf292:AndroidViewProjectNode" />
@@ -2465,8 +2438,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane" />
     </panes>
   </component>
@@ -2483,6 +2454,7 @@
       <recent name="tech.rtsproduction.tuktuk" />
     </key>
     <key name="android.template.parentActivityClass">
+      <recent name="tech.rtsproduction.tuktuk.View.MainActivity" />
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -2617,14 +2589,14 @@
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <layout>
-      <window_info anchor="bottom" id="Android Profiler" order="7" weight="0.32919255" />
+      <window_info anchor="bottom" id="Android Profiler" order="7" show_stripe_button="false" weight="0.32919255" />
       <window_info id="Build Variants" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5007153" side_tool="true" weight="0.4" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5007153" side_tool="true" weight="0.32919255" />
       <window_info anchor="right" id="Flutter Outline" order="3" />
       <window_info anchor="bottom" id="Logcat" order="7" weight="0.32919255" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info anchor="bottom" id="Build" order="7" visible="true" weight="0.32919255" />
+      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49928468" visible="true" weight="0.32919255" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Device File Explorer" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49928468" weight="0.4" />
@@ -2657,6 +2629,66 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/tech/rtsproduction/tuktuk/View/HistoryActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/tech/rtsproduction/tuktuk/View/ConfirmationActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1305">
+          <caret line="117" column="20" selection-start-line="117" selection-start-column="20" selection-end-line="117" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/tech/rtsproduction/tuktuk/SettingsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/tech/rtsproduction/tuktuk/AppCompatPreferenceActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_confirmation.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/tech/rtsproduction/tuktuk/View/HistoryActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/tech/rtsproduction/tuktuk/View/ConfirmationActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1290">
+          <caret line="116" column="53" selection-start-line="116" selection-start-column="53" selection-end-line="116" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_confirmation.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="990">
+          <caret line="66" column="19" selection-start-line="66" selection-start-column="19" selection-end-line="66" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/tech/rtsproduction/tuktuk/View/ConfirmationActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -2721,16 +2753,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_auth.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="37" selection-end-line="65" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -2745,37 +2767,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_confirmation.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="27" column="41" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-111">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/tech/rtsproduction/tuktuk/View/AuthActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/tech/rtsproduction/tuktuk/View/ConfirmationActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -2854,13 +2849,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/tech/rtsproduction/tuktuk/View/HistoryActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/frag_history_data.xml">
       <provider editor-type-id="android-designer2">
         <state />
@@ -2885,8 +2873,123 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="39" column="35" selection-end-line="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
           <folding>
-            <element signature="method#setDropoffLocation#0;class#BookingData#0" />
+            <element signature="e#532#550#0" expanded="true" />
+            <element signature="e#1007#1032#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_auth.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="8" column="37" selection-end-line="65" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_confirmation.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/tech/rtsproduction/tuktuk/AppCompatPreferenceActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/xml/pref_data_sync.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="40" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/tech/rtsproduction/tuktuk/SettingsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="186" column="36" lean-forward="true" selection-start-line="186" selection-start-column="36" selection-end-line="186" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/xml/pref_headers.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/tech/rtsproduction/tuktuk/View/ConfirmationActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1170">
+          <caret line="117" column="20" selection-start-line="117" selection-start-column="20" selection-end-line="117" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/xml/profile_pref.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+          <folding>
+            <element signature="e#226#245#0" expanded="true" />
+            <element signature="e#385#405#0" expanded="true" />
+            <element signature="e#545#566#0" expanded="true" />
+            <element signature="e#828#851#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/tech/rtsproduction/tuktuk/View/HistoryActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ProfileActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/AppCompatProfileActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="43" lean-forward="true" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -1,5 +1,7 @@
 package tech.rtsproduction.tuktuk.View;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -39,11 +41,19 @@ public class HistoryActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         pager.setAdapter(new HistoryAdapter(getSupportFragmentManager()));
         tabLayout.setupWithViewPager(pager, true);
+        this.registerReceiver(new IntentReceiver(),null);
     }
 
     @Override
     public void onBackPressed() {
         startActivity(new Intent(HistoryActivity.this, MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+    }
+
+    private class IntentReceiver extends BroadcastReceiver{
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            tabLayout.getTabAt(1).select();
+        }
     }
 }
 
