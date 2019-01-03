@@ -19,6 +19,8 @@ import tech.rtsproduction.tuktuk.View.MainActivity;
 
 public class RegisterFragment extends Fragment {
 
+    //TODO: Update Shared Pref on Account Registration
+
     private TextInputLayout mName, mEmail, mPassword, mConfirmPassword;
     //private ProgressBar mProgressbar;
     private CheckBox mCheckTerms;
@@ -51,7 +53,6 @@ public class RegisterFragment extends Fragment {
                 } else {
                     //insertData(mName.getEditText().getText().toString(), mEmail.getEditText().getText().toString(), mPass.getEditText().getText().toString());
                     startActivity(new Intent(getContext(), MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK));
-
                 }
             }
         });

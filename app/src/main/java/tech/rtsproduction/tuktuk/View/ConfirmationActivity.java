@@ -41,7 +41,7 @@ public class ConfirmationActivity extends FragmentActivity implements OnMapReady
 
     private final String TAG = getClass().getName();
 
-    private final int DIFF_TIME = 1;
+    private final int DIFF_TIME = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +60,7 @@ public class ConfirmationActivity extends FragmentActivity implements OnMapReady
         populateSpinnerDate();
         double[] points;
         try {
+            //TODO: Check How To Center The Map Between 2 Points
             /*
             points = getIntent().getDoubleArrayExtra("points");
             startPos = new LatLng(points[0], points[1]);
@@ -86,7 +87,7 @@ public class ConfirmationActivity extends FragmentActivity implements OnMapReady
             public void onClick(View v) {
                 Calendar c = Calendar.getInstance();
                 DatePickerDialog datePicker = new DatePickerDialog(ConfirmationActivity.this, ConfirmationActivity.this, c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_MONTH));
-                c.add(Calendar.DATE, +4);
+                c.add(Calendar.DATE, +3);
                 datePicker.getDatePicker().setMinDate(System.currentTimeMillis() - 1000);
                 datePicker.getDatePicker().setMaxDate(c.getTimeInMillis());
                 datePicker.show();

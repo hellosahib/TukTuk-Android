@@ -87,4 +87,6 @@
     <string name="pref_email">user_email_pref</string>
     <string name="pref_mobile">user_mobile_pref</string>
     <string name="pref_password">user_password_pref</string>
+    <string name="default_name">Unnamed</string>
+    <string name="default_phone">No Phone Found</string>
 </resources>

@@ -1,6 +1,7 @@
 package tech.rtsproduction.tuktuk.View;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.PorterDuff;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -8,11 +9,14 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.os.Bundle;
+import android.support.v7.preference.PreferenceManager;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.places.AutocompleteFilter;
@@ -25,13 +29,14 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import tech.rtsproduction.tuktuk.ProfileActivity;
 import tech.rtsproduction.tuktuk.R;
 
-public class MainActivity extends FragmentActivity implements OnMapReadyCallback {
+public class MainActivity extends FragmentActivity implements OnMapReadyCallback,SharedPreferences.OnSharedPreferenceChangeListener {
 
     private static final String TAG = MainActivity.class.getSimpleName();
 
-    private Button mNavigationMenu , mConfirmBtn ;
+    private Button mNavigationBtn , mConfirmBtn ;
     private DrawerLayout mDrawerLayout;
     private GoogleMap mMap;
     private NavigationView mNavigationView;
@@ -46,7 +51,7 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mNavigationMenu = findViewById(R.id.btn_navigation_menu_main);
+        mNavigationBtn = findViewById(R.id.btn_navigation_menu_main);
         mNavigationView = findViewById(R.id.nav_view_main);
         mDrawerLayout = findViewById(R.id.drawer_layout_main);
         //Changing Color Of Confirm Button
@@ -64,7 +69,7 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
         mapFragment.getMapAsync(this);
 
         //MARK: ONCLICK LISTENER
-        mNavigationMenu.setOnClickListener(new View.OnClickListener() {
+        mNavigationBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mDrawerLayout.openDrawer(GravityCompat.START);
@@ -81,11 +86,24 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
                         mDrawerLayout.closeDrawers();
                         return true;
                     }
+                    case R.id.nav_profile:{
+                        startActivity(new Intent(MainActivity.this,ProfileActivity.class));
+                        menuItem.setChecked(true);
+                        mDrawerLayout.closeDrawers();
+                        return true;
+                    }
+                    case R.id.nav_support:{
+                        //TODO:Implement Support
+                        Toast.makeText(MainActivity.this, "To be Implemented", Toast.LENGTH_SHORT).show();
+                    }
+                    case R.id.nav_emergency:{
+                        //TODO:Implement Emergency Call
+                        Toast.makeText(MainActivity.this, "To be Implemented", Toast.LENGTH_SHORT).show();
+                    }
                 }
                 return false;
             }
         });
-
 
         mConfirmBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,6 +122,27 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
                 }
             }
         });
+        setupSharedPref();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        PreferenceManager.getDefaultSharedPreferences(this).unregisterOnSharedPreferenceChangeListener(this);
+    }
+
+    private void setupSharedPref(){
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        updateProfile(sharedPreferences.getString(getString(R.string.pref_name),getString(R.string.default_name)),sharedPreferences.getString(getString(R.string.pref_mobile),getString(R.string.default_phone)));
+        sharedPreferences.registerOnSharedPreferenceChangeListener(this);
+    }
+
+    private void updateProfile(String name,String phone){
+        View header = mNavigationView.getHeaderView(0);
+        TextView nameField = header.findViewById(R.id.tv_name_navheader);
+        TextView phoneField = header.findViewById(R.id.tv_phone_navheader);
+        if(name!=null) nameField.setText(name);
+        if(phone!=null) phoneField.setText(phone);
     }
 
     private void setupPlacesFragment() {
@@ -148,15 +187,20 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
         l2.setVisibility(View.INVISIBLE);
     }
 
-    @Override
-    public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
-    }
-
     public void updateMap(Place p) {
         mMap.clear();
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(p.getLatLng(), DEFAULT_ZOOM));
         mMap.addMarker(new MarkerOptions().position(p.getLatLng()).title(p.getName().toString()));
     }
 
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        mMap = googleMap;
+    }
+
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+        if(key.equals(getString(R.string.pref_name)))  updateProfile(sharedPreferences.getString(getString(R.string.pref_name),getString(R.string.default_name)),null);
+        if(key.equals(getString(R.string.pref_mobile)))  updateProfile(null,sharedPreferences.getString(getString(R.string.pref_mobile),getString(R.string.default_phone)));
+    }
 }

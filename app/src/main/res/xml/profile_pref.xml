@@ -4,20 +4,24 @@
         <EditTextPreference
             android:key="@string/pref_name"
             android:title="Name"
-            android:textColor="@color/colorAccent" />
+            android:textColor="@color/colorAccent"
+            android:inputType="textPersonName"/>
         <EditTextPreference
             android:key="@string/pref_email"
             android:title="Email"
-            android:textColor="@color/colorAccent"/>
+            android:textColor="@color/colorAccent"
+            android:inputType="textEmailAddress"/>
         <EditTextPreference
             android:key="@string/pref_mobile"
             android:title="Mobile"
-            android:textColor="@color/colorAccent"/>
+            android:textColor="@color/colorAccent"
+            android:inputType="phone"/>
     </PreferenceCategory>
     <PreferenceCategory android:title="Security Details">
         <EditTextPreference
             android:title="Password"
             android:key="@string/pref_password"
-            android:summary="Change Password"/>
+            android:summary="Change Password"
+            android:inputType="textVisiblePassword"/>
     </PreferenceCategory>
 </PreferenceScreen>

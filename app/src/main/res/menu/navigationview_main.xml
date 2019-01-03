@@ -6,17 +6,9 @@
             android:icon="@drawable/ic_account_circle_black_24dp"
             android:title="Profile" />
         <item
-            android:id="@+id/nav_requests"
-            android:title="Requests"
-            android:icon="@drawable/ic_android_black_24dp"/>
-        <item
             android:id="@+id/nav_trips"
             android:title="My Trips"
             android:icon="@drawable/ic_history_black_24dp"/>
-        <item
-            android:id="@+id/nav_news"
-            android:title="News And Offer"
-            android:icon="@drawable/ic_local_offer_black_24dp"/>
         <item
             android:id="@+id/nav_emergency"
             android:title="Emergency Contacts"

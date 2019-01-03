@@ -9,11 +9,14 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.NavUtils;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
@@ -39,21 +42,33 @@ public class HistoryActivity extends AppCompatActivity {
         tabLayout = findViewById(R.id.tab_layout_history);
         toolbar.setTitle("History");
         setSupportActionBar(toolbar);
+        if(getSupportActionBar()!=null){
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
         pager.setAdapter(new HistoryAdapter(getSupportFragmentManager()));
         tabLayout.setupWithViewPager(pager, true);
-        this.registerReceiver(new IntentReceiver(),null);
+//        this.registerReceiver(new IntentReceiver(),null);
     }
 
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(HistoryActivity.this, MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+        NavUtils.navigateUpFromSameTask(this);
     }
 
     private class IntentReceiver extends BroadcastReceiver{
         @Override
         public void onReceive(Context context, Intent intent) {
-            tabLayout.getTabAt(1).select();
+            Log.e("History",String.valueOf(intent.getFlags()));
+            //tabLayout.getTabAt(1).select();
         }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId()==android.R.id.home){
+            NavUtils.navigateUpFromSameTask(this);
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
 
