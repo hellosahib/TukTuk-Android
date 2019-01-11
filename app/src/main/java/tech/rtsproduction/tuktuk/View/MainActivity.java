@@ -31,6 +31,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import tech.rtsproduction.tuktuk.ProfileActivity;
 import tech.rtsproduction.tuktuk.R;
+import tech.rtsproduction.tuktuk.SupportActivity;
 
 public class MainActivity extends FragmentActivity implements OnMapReadyCallback,SharedPreferences.OnSharedPreferenceChangeListener {
 
@@ -50,6 +51,9 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
 
         mNavigationBtn = findViewById(R.id.btn_navigation_menu_main);
         mNavigationView = findViewById(R.id.nav_view_main);
@@ -63,10 +67,6 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
         locationFromFragment = (PlaceAutocompleteFragment) getFragmentManager().findFragmentById(R.id.frag_place_from_main);
         locationToFragment = (PlaceAutocompleteFragment) getFragmentManager().findFragmentById(R.id.frag_place_to_main);
         setupPlacesFragment();
-
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
 
         //MARK: ONCLICK LISTENER
         mNavigationBtn.setOnClickListener(new View.OnClickListener() {
@@ -93,8 +93,10 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
                         return true;
                     }
                     case R.id.nav_support:{
-                        //TODO:Implement Support
-                        Toast.makeText(MainActivity.this, "To be Implemented", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(MainActivity.this,SupportActivity.class));
+                        menuItem.setChecked(true);
+                        mDrawerLayout.closeDrawers();
+                        return true;
                     }
                     case R.id.nav_emergency:{
                         //TODO:Implement Emergency Call

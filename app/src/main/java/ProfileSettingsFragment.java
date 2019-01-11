@@ -3,11 +3,12 @@ import android.os.Bundle;
 import android.support.v7.preference.EditTextPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceFragmentCompat;
-import android.support.v7.preference.PreferenceScreen;
 
 import tech.rtsproduction.tuktuk.R;
 
 public class ProfileSettingsFragment extends PreferenceFragmentCompat implements SharedPreferences.OnSharedPreferenceChangeListener {
+
+    SharedPreferences sharedPreferences;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -24,16 +25,15 @@ public class ProfileSettingsFragment extends PreferenceFragmentCompat implements
     @Override
     public void onCreatePreferences(Bundle bundle, String s) {
         addPreferencesFromResource(R.xml.profile_pref);
-        SharedPreferences sharedPreferences = getPreferenceScreen().getSharedPreferences();
-        PreferenceScreen screen = getPreferenceScreen();
-        for (int i = 0; i < screen.getPreferenceCount(); i++) {
-            Preference p = screen.getPreference(i);
-            setPreferenceSummary(p, sharedPreferences.getString(p.getKey(), ""));
-        }
+        sharedPreferences = getPreferenceScreen().getSharedPreferences();
+        setPreferenceSummary(findPreference(getString(R.string.pref_name)));
+        setPreferenceSummary(findPreference(getString(R.string.pref_mobile)));
+        setPreferenceSummary(findPreference(getString(R.string.pref_email)));
     }
 
-    private void setPreferenceSummary(Preference p, String value) {
+    private void setPreferenceSummary(Preference p) {
         if (p instanceof EditTextPreference) {
+            String value = sharedPreferences.getString(p.getKey(),"");
             p.setSummary(value);
         }
     }
@@ -43,8 +43,7 @@ public class ProfileSettingsFragment extends PreferenceFragmentCompat implements
         Preference preference = findPreference(key);
         if (preference != null) {
             if (preference instanceof EditTextPreference) {
-                String value = sharedPreferences.getString(preference.getKey(), "");
-                setPreferenceSummary(preference, value);
+                setPreferenceSummary(preference);
             }
         }
     }

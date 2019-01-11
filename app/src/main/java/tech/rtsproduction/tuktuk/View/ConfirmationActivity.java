@@ -4,6 +4,7 @@ import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -70,7 +71,7 @@ public class ConfirmationActivity extends FragmentActivity implements OnMapReady
             //SAMPLE DATA
             startPos = new LatLng(30.705751, 76.801278);
             endPos = new LatLng(30.702689, 76.791115);
-            mapPos = new LatLng(30.70,76.78);
+            mapPos = new LatLng(30.70, 76.80);
         } catch (Exception e) {
             Log.e(TAG, e.getMessage());
         }
@@ -78,7 +79,7 @@ public class ConfirmationActivity extends FragmentActivity implements OnMapReady
         mClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                NavUtils.navigateUpFromSameTask(ConfirmationActivity.this);
             }
         });
 
@@ -97,11 +98,26 @@ public class ConfirmationActivity extends FragmentActivity implements OnMapReady
         mBookNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(enableConfirm()){
+                if (enableConfirm()) {
+                    /*
+                    To Show Animation Screen until Data is uploaded onto Server
+                     */
+                    View overlay = findViewById(R.id.view_offset_confirmation);
+                    animFerris.setVisibility(View.VISIBLE);
+                    overlay.setVisibility(View.VISIBLE);
+                    animFerris.startAnimation();
+                    //Just For Test
+                    try {
+                        Thread.sleep(5000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+
                     Intent gotoHistory = new Intent(ConfirmationActivity.this, HistoryActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    sendBroadcast(gotoHistory);
                     startActivity(gotoHistory);
-                }else {Toast.makeText(ConfirmationActivity.this, "Please Fill All Details", Toast.LENGTH_SHORT).show();}
+                } else {
+                    Toast.makeText(ConfirmationActivity.this, "Please Fill All Details", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
@@ -113,9 +129,10 @@ public class ConfirmationActivity extends FragmentActivity implements OnMapReady
     }
 
     //TODO: Enable Confirm Button After Selection of Both Date and Time
+    //TODO: Implement This
     public boolean enableConfirm() {
         //return(mDate.getText().toString().equalsIgnoreCase("SelectDate"));
-        Log.e(TAG,mTime.getSelectedItem().toString());
+        Log.e(TAG, mTime.getSelectedItem().toString());
         return true;
     }
 
@@ -131,21 +148,14 @@ public class ConfirmationActivity extends FragmentActivity implements OnMapReady
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(mapPos, 14));
-        setMapPoints();
-        /*
-        View v = findViewById(R.id.view_offset_confirmation);
-        animFerris.setVisibility(View.VISIBLE);
-        v.setVisibility(View.VISIBLE);
-        animFerris.startAnimation();
-        */
+        setupMapView();
     }
 
-    public void setMapPoints() {
+    public void setupMapView() {
         mMap.addMarker(new MarkerOptions().position(startPos));
         mMap.addMarker(new MarkerOptions().position(endPos));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(mapPos, 14));
     }
-
 
     //TODO: Change 24Hours Timeline to 12Hours Timeline
     public void populateSpinnerDate() {
